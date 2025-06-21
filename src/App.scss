@@ -1,0 +1,61 @@
+// App.scss - Global application styles
+.loading-container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to right, #2c3e50, #3498db);
+}
+
+.app {
+  // Full screen background with smooth transitions
+  min-height: 100vh;
+  width: 100%;
+  transition: all 0.5s ease-in-out;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  // Add overlay to ensure text readability
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+  }
+
+  // Ensure content is above overlay
+  .container {
+    position: relative;
+    z-index: 2;
+    padding: 2rem;
+    width: 100%;
+  }
+}
+
+// Reset default styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Improve font rendering
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen', sans-serif;
+  overflow-x: hidden;
+}
