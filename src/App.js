@@ -58,7 +58,7 @@ const preloadImage = (url) => {
   // The empty dependency array [] means this only runs once on mount
   useEffect(() => {
     fetchNewQuote();
-  }, [fetchNewQuote]);
+  }, []);
 
   if (isLoading) {
     return (
